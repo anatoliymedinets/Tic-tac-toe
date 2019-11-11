@@ -1,0 +1,22 @@
+<div class="title center">Tiс tac toe</div>
+<div class="board">
+  <app-cell 
+    *ngFor="let cell of cells" 
+    [cell]="cell"
+    (cellPress)="cellPress($event)"
+  ></app-cell>
+</div>
+
+<div class="actions center">
+  <button 
+  *ngIf="gameService.gameState === 2"
+    class="btn" 
+    (click)="reset()"
+  >Reset</button>
+  
+  <button 
+    *ngIf="gameService.gameState === 3"
+    class="btn"
+    (click)="reset()"  
+  >Play again</button>
+</div>

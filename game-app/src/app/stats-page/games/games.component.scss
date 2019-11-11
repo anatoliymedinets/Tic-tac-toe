@@ -1,0 +1,23 @@
+.table{
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  thead {
+    background:#42a5f5;
+  }
+
+  tr{
+    height: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    &:nth-child(odd) {
+      background-color: rgba(242,242,242,0.5);
+    }
+  }
+  td{
+    
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

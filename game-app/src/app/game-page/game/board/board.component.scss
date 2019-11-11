@@ -1,0 +1,27 @@
+.board{
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+app-cell{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
+  float: left;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.title{
+  font-size: 36px;
+  font-family: 'Indie Flower', cursive;
+  margin: 15px 0;
+}
+
+.actions{
+  margin: 20px 0;
+}

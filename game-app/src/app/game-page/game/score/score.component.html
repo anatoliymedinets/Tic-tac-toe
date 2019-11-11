@@ -1,0 +1,18 @@
+<div class="session">
+    <div class="player">
+        <div class="center">Player (X): {{gameService.gameSession?.firstPlayer.name}}</div>
+        <ul>
+            <li>win: {{gameService.gameSession?.firstPlayer.win || 0 }}</li> 
+            <li>lose: {{gameService.gameSession?.firstPlayer.lose || 0 }} </li>
+            <li>draw: {{gameService.gameSession?.firstPlayer.draw || 0 }} </li>  
+        </ul>
+    </div>
+    <div class="player">
+            <div class="center">Player (O): {{gameService.gameSession?.secondPlayer.name}}</div> 
+        <ul>
+            <li>win:  {{gameService.gameSession?.secondPlayer.win || 0}} </li> 
+            <li>lose: {{gameService.gameSession?.secondPlayer.lose || 0}} </li>
+            <li>draw: {{gameService.gameSession?.secondPlayer.draw || 0}} </li>  
+        </ul>
+    </div>
+</div>

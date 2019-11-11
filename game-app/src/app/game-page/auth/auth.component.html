@@ -1,0 +1,47 @@
+
+<div class="auth">
+    <h1 class="center title">Game</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="card-content">
+            <div class="input-field">
+                <label for="firstPlayerName">First player (X)</label>
+                <input 
+                    id="firstPlayerName" 
+                    type="text" 
+                    autocomplete="off"
+                    formControlName="firstPlayerName"
+                />
+                <span class="error" *ngIf="form.get('firstPlayerName').invalid && form.get('firstPlayerName').touched">
+                    <span *ngIf="form.get('firstPlayerName').errors['required']">Required field</span>
+                    <span *ngIf="form.get('firstPlayerName').errors['minlength'] && form.get('firstPlayerName').errors['minlength']['requiredLength']">
+                        The field mast be more then {{form.get('firstPlayerName').errors['minlength']['requiredLength']}} symbols. 
+                        (Now {{form.get('firstPlayerName').errors['minlength']['actualLength']}})
+                    </span>
+                    <span *ngIf="form.get('firstPlayerName').errors['equal']">The name of the first player cannot be the same as the name of the second one.</span>
+                </span>
+            </div>
+
+            <div class="input-field">
+                <label for="secondPlayerName">Second player (O)</label>
+                <input 
+                    id="secondPlayerName" 
+                    type="text" 
+                    autocomplete="off" 
+                    formControlName="secondPlayerName"
+                />
+                <span class="error" *ngIf="form.get('secondPlayerName').invalid && form.get('secondPlayerName').touched">
+                    <span *ngIf="form.get('secondPlayerName').errors['required']">Required field</span>
+                    <span *ngIf="form.get('secondPlayerName').errors['minlength'] && form.get('secondPlayerName').errors['minlength']['requiredLength']">
+                        The field must be then {{form.get('secondPlayerName').errors['minlength']['requiredLength']}} symbols. 
+                        (Now {{form.get('secondPlayerName').errors['minlength']['actualLength']}})
+                    </span>
+                    <span *ngIf="form.get('secondPlayerName').errors['equal']">The name of the second player cannot be the same as the name of the first one.</span>
+                </span>
+            </div>
+        </div>
+        <div class="card-action">
+            <button type="submit" class="btn">Play</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,17 @@
+<ul class="tabs center">
+  <li [class.active]="activeTab==='Players'"
+      (click)="changeTab($event,'Players')"
+  >
+    <a href="#Players" >Players</a>
+  </li>
+  <li [class.active]="activeTab==='Games'"
+      (click)="changeTab($event, 'Games')"
+  >
+    <a href="#Games" >Games</a>
+  </li>
+</ul>
+
+<div class="content">
+  <app-games *ngIf="activeTab==='Games'"></app-games>
+  <app-players *ngIf="activeTab==='Players'"></app-players>
+</div>

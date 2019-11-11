@@ -1,0 +1,32 @@
+<div class="games-list" *ngIf="games$ | async as games; else loader">
+    <table *ngIf="games.length > 0; else listEmpty" class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Winner</th>
+                <th>Steps</th>
+                <th>Date</th>
+                <th>First player</th>
+                <th>Second player</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let g of games">
+                <td>{{g.id}}</td>
+                <td>{{g.winnerId? g.winnerId: '-----' }}</td>
+                <td>{{g.steps}}</td>
+                <td>{{g.date | date:'dd-MM-yyy HH:mm'}}</td>
+                <td>{{g.firstPlayer.name}}</td>
+                <td>{{g.secondPlayer.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #listEmpty>
+        <p class="center">Games list is empty.</p>
+    </ng-template>
+</div>
+
+<ng-template #loader>
+    <app-loader></app-loader>
+</ng-template>

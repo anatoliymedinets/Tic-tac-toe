@@ -1,0 +1,9 @@
+<app-auth 
+    *ngIf="gameService.gameState === 1"
+    (onAuth)="authenticate($event)"
+></app-auth>
+
+
+<app-game *ngIf="gameService.gameState === 2 || gameService.gameState === 3"></app-game>
+
+  
